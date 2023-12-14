@@ -18,16 +18,14 @@ import os
 #               GLOBAL VAR               #
 ##########################################
 TYPE_FORMAT = ['header1', 'header2', 'header3', 'normal', 'line_break']
-TYPE_FORMAT_FOR_FILE = ['#', '##', '###', '', '\n']
+TYPE_FORMAT_FOR_FILE = ['#', '##', '###', '', '']
 ##########################################
 
-#TODO: Translate text into markdown language
+#TODO: Implement every functionnality that markdown offers (Maybe not the 3D model thought) https://docs.github.com/fr/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
 #TODO: Implement a graphical interface. Using tkinter ? Or rather PySimpleGUI ?
 #TODO: Find a way to show how it is interpreted in a window or a sub-section of the main window
 #TODO: Add credit at the end (in a footer)
 #TODO: Once all the text is done, write it in a file
-#TODO: Start the project lol
-
 
 
 
