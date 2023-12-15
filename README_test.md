@@ -4,11 +4,12 @@ If you have any question, suggestion, or you just want to say hi, don't hesitate
 Don't forget to leave the repository of this project a star!
 -->
 
-# Hi, this is a big header
+# Hello, this is a test!
 
-***This page is in work***
-
-~~Hi, this is a crossed test~~
-> I'm a quote
-Signed: quoteman
-
+### Here is some code
+```
+print('Hello, World!')
+print('Goodbye, World!')
+```
+<!--Now this is a comment nobody will see!
+At least, I hope-->
