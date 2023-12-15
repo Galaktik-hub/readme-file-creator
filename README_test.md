@@ -4,12 +4,6 @@ If you have any question, suggestion, or you just want to say hi, don't hesitate
 Don't forget to leave the repository of this project a star!
 -->
 
-# Hello, this is a test!
+# Here, you can find my GitHub page!
 
-### Here is some code
-```
-print('Hello, World!')
-print('Goodbye, World!')
-```
-<!--Now this is a comment nobody will see!
-At least, I hope-->
+[GitHub Page](https://github.com/Galaktik-hub)
