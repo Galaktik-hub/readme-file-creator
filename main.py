@@ -13,7 +13,6 @@ In the commentary of the README, there will always be a credit to this program, 
 ##########################################
 #import PySimpleGUI as sg
 import tkinter
-import os
 ##########################################
 #               GLOBAL VAR               #
 ##########################################
@@ -30,16 +29,18 @@ TYPE_FORMAT = {
     'sub' : ['<sub>', '</sub>'],
     'sup' : ['<sup>', '</sup>'],
     'quote' : ['> ', '\n'],
-    'code' : ['\n```\n', '\n```\n'],
-    'comment': ['<!--', '-->']
+    'code' : ['```', '\n```'],
+    'comment': ['<!--\n', '\n-->'],
+    'link': ['[', ']']
     }
 ##########################################
 
 #TODO: Implement every functionnality that markdown offers (Maybe not the 3D model though) https://docs.github.com/fr/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
 #TODO: Implement a graphical interface. Using tkinter ? Or rather PySimpleGUI ?
+#TODO: In that interface, make a writing area
+#TODO: Make possible for user to freely format text
 #TODO: Show how the text is interpreted in a window or a sub-section of the main window
-#TODO: Add credit at the beginning (In a commentary)
-#TODO: Once all the text is done, write it in a file
+#TODO: Import a .txt file and format the text in it
 
 
 if __name__ == '__main__':
@@ -51,11 +52,17 @@ if __name__ == '__main__':
         if ask_type == 'write':
             break
         elif ask_type == 'line_break':
-            ask_texte = ''
+            ask_texte = '' 
+            writing.append(TYPE_FORMAT[ask_type][0])           
         else:
+            type_write = TYPE_FORMAT[ask_type][0]
+            if ask_type == 'code':
+                language = '\n' + input("Would you like to inteprete the code in a specific language ? ")
+                if language == 'no':
+                    language = '\n'
+                type_write += language
             ask_texte = input('Insert your text: ')
-        
-        writing.append(TYPE_FORMAT[ask_type][0] + ask_texte)    # Writing the start of your line with the said text
+            writing.append(type_write + ask_texte)    # Writing the start of your line with the said text
 
         if ask_type in ['comment', 'code']: # If you're writing something that goes on multiple lines, it asks you if you want to continue to write in the said section
             while True:
@@ -66,9 +73,14 @@ if __name__ == '__main__':
 
         writing[len(writing)-1] += TYPE_FORMAT[ask_type][1] # Writing the closing argument
 
+        if ask_type == 'link':
+            link = input('What do you want this text to link to ? ')
+            writing[len(writing)-1] += f'({link})'
+
     # This is the part where everything you wrote is going to be put into a README.md file
     with open('README_test.md', 'w') as file:
         file.write('<!--\n')
+        file.write('This README file was made the readme file creator from https://github.com/Galaktik-hub/readme-file-creator')
         file.write('Thank you for using my program, it really means a lot to me!\n')
         file.write('If you have any question, suggestion, or you just want to say hi, don\'t hesitate to check my GitHub page: https://github.com/Galaktik-hub\n')
         file.write('Don\'t forget to leave the repository of this project a star!\n')
