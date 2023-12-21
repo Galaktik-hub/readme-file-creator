@@ -6,7 +6,7 @@ Throught a graphical interface, you can type in your text and the way you want t
 
 Once you're done creating your README file, you can press the 'Finished!' button and it will create the file in your current directory.
 
-In the commentary of the README, there will always be a credit to this program, I do not restreint you to remove it, thought crediting someone for their work is always good!
+In the commentary of the README, there will always be a credit to this program, I do not restreint you to remove it, though crediting someone for their work is always good!
 '''
 ##########################################
 #           IMPORTING SECTION            #
