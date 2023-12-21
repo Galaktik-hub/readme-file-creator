@@ -81,7 +81,6 @@ if __name__ == '__main__':
     with open('README_test.md', 'w') as file:
         file.write('<!--\n')
         file.write('This README file was made the readme file creator from https://github.com/Galaktik-hub/readme-file-creator')
-        file.write('Thank you for using my program, it really means a lot to me!\n')
         file.write('If you have any question, suggestion, or you just want to say hi, don\'t hesitate to check my GitHub page: https://github.com/Galaktik-hub\n')
         file.write('Don\'t forget to leave the repository of this project a star!\n')
         file.write('-->\n')
