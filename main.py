@@ -48,23 +48,50 @@ if __name__ == '__main__':
     writing = list()    # We're going to append every line and type of format wanted in this list
 
     while True:
+
         ask_type = input('What kind of thing do you want to write ? ')
+
         if ask_type == 'write':
             break
+
         elif ask_type == 'line_break':
             ask_texte = '' 
-            writing.append(TYPE_FORMAT[ask_type][0])           
+            writing.append(TYPE_FORMAT[ask_type][0])  
+
+        elif ask_type == 'help':    # Display all the thing you can do with the README file creator
+            print('Here is all the command the README file creator can offer \n')
+            print('header1/2/3 : Write a header, 1 being the biggest one')
+            print('normal : Type normal text')
+            print('line_break : Make a line break')
+            print('bold : Write something in bold')
+            print('italic : Write something in italic')
+            print('crossed : Write something that will be crossed')
+            print('bolditalic : Write something that will be in bold and in italic')
+            print('sub : Define subscript text')
+            print('sup : Define supscript text')
+            print('quote : Quote a sentence')
+            print('comment : Comment your file (Will not be visible in preview nor in display)')
+            print('link : Define an hyperlink text\n')
+            continue
+
+        elif ask_type not in TYPE_FORMAT:
+            print('Sorry, you entered a wrong format! If you need help with the commands type in: \'help\'')
+            continue
+
         else:
             type_write = TYPE_FORMAT[ask_type][0]
+
             if ask_type == 'code':
                 language = '\n' + input("Would you like to inteprete the code in a specific language ? ")
                 if language == 'no':
                     language = '\n'
                 type_write += language
+
             ask_texte = input('Insert your text: ')
             writing.append(type_write + ask_texte)    # Writing the start of your line with the said text
 
         if ask_type in ['comment', 'code']: # If you're writing something that goes on multiple lines, it asks you if you want to continue to write in the said section
+            
             while True:
                 ask_texte = input(f'Any more text in the {ask_type} section ? ')
                 if ask_texte == 'close':
@@ -87,4 +114,3 @@ if __name__ == '__main__':
         file.write('\n')
         for line in writing:
             file.write(line)
-        
