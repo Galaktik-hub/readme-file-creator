@@ -40,7 +40,7 @@ TYPE_FORMAT = {
 #TODO: In that interface, make a writing area
 #TODO: Make possible for user to freely format text
 #TODO: Show how the text is interpreted in a window or a sub-section of the main window
-#TODO: Import a .txt file and format the text in it
+#TODO: Import a .txt file or an already existing .md file and format the text in it
 
 
 if __name__ == '__main__':
