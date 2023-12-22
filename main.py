@@ -41,6 +41,7 @@ TYPE_FORMAT = {
 #TODO: Make possible for user to freely format text
 #TODO: Show how the text is interpreted in a window or a sub-section of the main window
 #TODO: Import a .txt file or an already existing .md file and format the text in it
+#TODO: Implement option to add what offers the beautify github profile repo (https://github.com/rzashakeri/beautify-github-profile)
 
 
 if __name__ == '__main__':
